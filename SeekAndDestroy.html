@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            function destroyer(arr) {
+                
+                console.log("The array length is "+ arguments[0]);
+                for(let i = 1; i < arguments.length; i++){ //for iterating through the arguments object
+                    for(let j = 0; j < arguments[0].length; j++){
+                        if(arguments[i] == arguments[0][j]){
+                        arguments[0].splice(j, 1);
+                        j=0; i=0;
+                        }                     
+                    }                    
+                }                
+                return arguments[0];
+                }
+
+                console.log(destroyer([1,2,3,5,1,2,3], 2, 3));
+        </script>
+    </body>
+</html>
